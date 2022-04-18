@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset ="utf-8">
+        <title>Exercícios HTML</title>
+        <style>
+            #conteudo{
+                padding: 30px 0px; 
+            }
+        </style>
+    </head>
+
+    <boby>
+        <header>
+            <h1>Exercicios html</h1>
+        </header>
+        <nav>
+            <a href wb-nav="Exercicios/texto01.html">Aula Texto</a>
+            <a href wb-nav="Exercicios/aula.link.html">| Aula Link</a>
+            <a href wb-nav="Exercicios/tabelas.html">| Aula Tabela</a>
+            <a href wb-nav="Exercicios/formulario/form.html">| Aula Formulario</a>
+            <a href wb-nav="Exercicios/imagens.html">| Aula imagens</a>
+            <a href wb-nav="Exercicios/video.html">| Aula video</a>
+        </nav>
+
+        <section id="conteudo"></section>
+        
+        <hr>
+        <footer>
+            Curso de Web Moderno
+        </footer>
+
+        <script> 
+           document.querySelectorAll('[wb-nav]').forEach(link =>{
+                const conteudo = document.getElementById('conteudo')
+
+                link.onclick = function(e){
+                    e.preventDefault()
+                    fetch(link.getAttribute('wb-nav'))
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                 }
+            })
+        </script>
+        
+    </boby>
+
+</html>

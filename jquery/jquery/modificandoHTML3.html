@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #03</h1>
+    <div id='conteudo'></div>
+
+    <script>
+
+        // $(document).ready(function(){ })
+
+         
+        $(function() { // quando o documento estiver pronto vai chamar a função 
+            const Alunos = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+
+            const tabela = $('<table>') // crio a tabela
+
+            const linhas = Alunos.map(aluno =>{  // transformando o array pessoas nas linhas
+                const tdNome = $('<td>').html(aluno.nome)
+                const tdNota = $('<td>').html(aluno.nota)
+                //return $('<tr>').append(tdNome).append(tdNota)
+                 return $('<tr>').append(tdNome, tdNota)
+            })  // corpo da tabela
+
+            $(tabela).append(linhas).css('border', 'solid 5px') // adiciono o corpo na tabela
+
+            $('#conteudo').append(tabela)
+            
+        })
+
+
+        /*   forma que eu iria fazer
+        const tabela = $('<table><thead><tr><th>Nome</th> <th> Nota</th></tr></thead></table>')
+        $('#conteudo').append(tabela)
+        
+        const tabelaBody = $('<tbody></tbody>')
+        
+        const tabelaTr = $('<tr></tr>')
+
+        const tabelaconteudo = [
+            $('<td></td>').append('ana'),
+            $('<td></td>').append('9.1')
+        ]
+
+        $(tabela).append(tabelaBody)
+        $(tabelaBody).append(tabelaTr)
+        $(tabelaTr).append(tabelaconteudo) */
+
+        // ...
+    </script>
+</body>

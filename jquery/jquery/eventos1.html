@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Eventos #01</h1>
+    <div id='posicao'></div>
+    <div id='cliques'>Cliques: 0</div>
+    <input type="text" placeholder="Cor de Background">
+
+    <script>
+
+        function mostrarPosicaoMouse(e){ // e = evento // o evento em jQuery não e o mesmo evento da dom
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`) // acessa o id possicao e coloca as cordenadas do mouse tanto no eixo x e y
+        }
+
+        $('body').on('mousemove', mostrarPosicaoMouse) // acessa o body e pega a posicao do mouse e passa para a função
+
+        $('#posicao').mouseover( e => {
+            $('body').off('mousemove', mostrarPosicaoMouse) // chama uma posicao de parada para a posicao do mouse, mouse para quando entra na div que te id posicao
+        })
+
+        $('#posicao').mouseleave(e => {
+            $('body').mousemove(mostrarPosicaoMouse) // função que retorna a pegar a posicao do mouse
+        })
+
+        let cliques = 0
+        $('body').click(e => {  // pega a ação de click do mouse perante a tag desejada
+            $('#cliques').html(`Cliques: ${++cliques}`) 
+        })
+
+        const backgroundOriginal  = $('body').css('background-color') // pega e guarda a cor do backgrund inicial
+
+        $('input').keyup(function (e) {
+
+            const valor = $(this).val() // pego o texto digitado 
+            
+            if (valor.match(/#[\da-fA-F]{3,6}/)) { // verifico se o valor digitado corresponde a um numero exadecimal
+                $('body').css('background-color', valor) // aplico a cor caso esteja certa
+            } else {
+                $('body').css('background-color', backgroundOriginal) // volta a cor original
+            }
+        })
+
+
+    </script>
+</body>
