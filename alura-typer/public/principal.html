@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+
+        <p class="frase center">Frase qualquer teste sasdasd</p>
+
+        <ul class="Informacoes center">
+            <li> <i class="small material-icons icones">description</i>  <span id="tamano-frase"> </span> palavras</li>
+            <li> <i class="small material-icons icones">description</i>  <span id="qtd-caracter"> </span> Caracteres</li>
+            <li> <i class="small material-icons icones">query_builder</i> <span id="segundos"> 6 </span> Segundos</li>
+        </ul>
+
+        <textarea class="campo-digitacao" cols="50" rows="20" data-teste="valorDetroData"></textarea>
+
+        <a class="btn-floating btn-large waves-effect waves-light red" id="reinicia-jogo">
+            <i class="material-icons">restore</i>
+        </a>
+        
+        <ul>
+            <li class="center"><span id="contadorCaracteres" > 0 </span>  Caracteres</li>
+            <li class="center"> <span id="contadorPalavras" > 0 </span>  palavras </li>
+        </ul>
+
+        <section class="Placar">
+            <h3 class="Center"> Placar </h3>
+
+            <table class="centerd bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>N de Palavras</th>
+                        <th>N de Caracteres</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Douglas</td>
+                        <td>10</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/principal.js"></script>
+
+</body>
+</html>

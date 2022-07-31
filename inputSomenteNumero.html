@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    
+<!--
+    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+
+    <input type="file">
+
+
+
+    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+-->
+
+
+    <form action="https://rockcontent.com/br/blog/bootstrap/" id="form-Edicao-Campanhas" method="get">        
+        <div class="widget-inner">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group">
+                        <label for="custo-pontos">Custo em pontos *</label>
+                        <input type="text" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" id="custo-pontos-edicao" maxlength="100" class="input-small" required="">
+                        &nbsp;
+
+                            <label class="inline">
+                                <input type="radio" name="IdMoeda" class="moeda-premios" checked="checked" value="1">
+                                <i class="milha"></i> Milhas
+                            </label>
+                            <label class="inline">
+                                <input type="radio" name="IdMoeda" class="moeda-premios" value="2">
+                                <i class="ticket"></i> Ticket
+                            </label>
+                    </div>
+                    <div class="control-group">
+                        <label for="vagas">Status</label>
+                        <label class="inline">
+
+                            <input checked="checked" data-val="true" data-val-required="O campo deve ser preenchido" id="ativo" name="Status" type="radio" value="1"> Ativo
+                        </label>
+                        <label class="inline">
+                            <input id="inativo" name="Status" type="radio" value="2"> Inativo
+                        </label>
+                    </div>
+                    <div class="control-group">
+                        <label for="entregaTipo">Tipo da Entrega</label>
+                        <label class="inline">
+                            <input checked="checked" data-val="true" data-val-required="O campo deve ser preenchido" id="EntregarNaEmpresa" name="EntregaTipo" type="radio" value="1"> Entregar na Empresa
+                        </label>
+                        <label class="inline">
+                            <input id="EntregarNaEmpresa" name="EntregaTipo" type="radio" value="2"> Entregar na Residência
+                        </label>
+                    </div>
+                    <div class="control-group">
+                        <label for="vagas">Quantidade de vagas *</label>
+                        <input class="input-small" type="text" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" id="vagas-edicao" maxlength="100" required="">
+                    </div>
+                    <div class="control-group">
+                        <label class="inline">
+                            <input id="limitar-quantidade-por-usuario-edicao" name="limitar-quantidade-por-usuario-edicao" type="checkbox" value="true"><input name="limitar-quantidade-por-usuario-edicao" type="hidden" value="false">Limitar prêmios por usuário
+                        </label>
+                    </div>
+                    <div class="control-group hide" id="div-quantidade-por-usuario-edicao">
+                        <label for="quantidadePorUsuario">Limite por Usuário </label>
+                        <input class="input-small" type="text" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" id="quantidade-por-usuario-edicao" maxlength="4" min="1" required="">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a href="#" class="btn btn-danger cancelar-campanha">
+                        <i class="icon icon-times-circle"></i>
+                        Cancelar
+                    </a>
+                    <a href="#" id="salvar" class="btn btn-primary salvar-campanha">
+                        <i class="icon icon-check"></i>
+                        Salvar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div> 
+        <p> Digite um texto</p>
+
+            <textarea maxlength="500" id="texto"></textarea>
+
+
+        <p class="valorDigitado">500</p>
+
+
+    </div>  
+
+</body>
+
+
+    <script>  
+
+    const caixaDeTexto = document.querySelector("#texto")
+
+    caixaDeTexto.addEventListener("input", (e) => {
+
+        console.log(e.key)
+
+        const tagValor = document.querySelector(".valorDigitado")
+
+        const valor = parseInt(tagValor.textContent);
+
+        if(valor != 0){
+         tagValor.textContent = (valor - 1)
+        }
+        
+
+    })
+    </script>
+
+
+</html>
