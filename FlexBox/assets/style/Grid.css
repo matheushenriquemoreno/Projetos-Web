@@ -1,0 +1,126 @@
+.banner {
+  display: grid;
+  gap: 1rem;
+}
+
+.banner img:nth-child(1) {
+  grid-column: 1/3; /*primeiro valor inicial, segundo final*/
+}
+
+.banner img:nth-child(4) {
+  grid-column: 2/3;
+  grid-row: 2/4;
+}
+
+@media (min-width: 720px) {
+  .banner {
+    /* altero os valores pelas colunas */
+    grid-template-columns: calc(50% - 0.75rem) auto auto; /* pego o primeiro item e deixo com os valores maiores que os outros */
+    column-gap: 1.5rem;
+  }
+  .banner img:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  .banner img:nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+}
+
+.eventos__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto repeat(2, 1fr) auto;
+  grid-template-areas:
+    "imagem imagem"
+    "nome nome"
+    "data data"
+    "local botao";
+}
+
+.eventos__item img {
+  grid-area: imagem;
+}
+
+.eventos__item h3 {
+  align-self: center;
+  grid-area: nome;
+}
+.eventos__item h4 {
+  align-self: center;
+  grid-area: data;
+}
+.eventos__item h5 {
+  align-self: center;
+  grid-area: local;
+}
+.eventos__item evento_acoes {
+  grid-area: botao;
+}
+
+/* Forma 1 */
+/* .agenda__item{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+    "imagem imagem"
+    "agenda descricao";
+}
+
+.agenda__item img{
+    grid-area: imagem;
+}
+
+.agenda__item .agenda__informacoes{
+    grid-area: agenda;
+}
+
+.agenda_item .agenda__atracao{
+    grid-area: descricao;
+} */
+
+/* Forma 2 */
+
+.agenda__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+}
+
+.agenda__item img {
+  grid-column: 1/ 3;
+}
+
+
+/* CSS para deixar o categorias ao lado de destaque */
+@media (min-width: 1200px) {
+    .categorias {
+      display: grid;
+      grid-template-areas:
+        "titulo titulo"
+        "lista destaque"
+        "lista imagem";
+      row-gap: 1rem;
+      column-gap: 1.5rem;
+      grid-template-columns: calc(50% - 0.75rem);
+      grid-template-rows: auto 1fr auto;
+    }
+  
+    .categorias__titulo {
+      grid-area: titulo;
+    }
+  
+    .categorias__lista {
+      grid-area: lista;
+    }
+  
+    .categorias__destaques {
+      grid-area: destaque;
+    }
+  
+    .categorias__imagem {
+      grid-area: imagem;
+    }
+  }
